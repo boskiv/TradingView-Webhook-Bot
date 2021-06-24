@@ -1,0 +1,17 @@
+{
+    "name": "TV to TG",
+    "description": "Tradongview to telegram bot alerts",
+    "repository": "https://github.com/boskiv/TradingView-Webhook-Bot",
+    "logo": "https://raw.githubusercontent.com/fabston/TradingView-Webhook-Bot/master/assets/logo.png",
+    "keywords": ["python", "flask", "static"],
+    "env": {
+        "TG_TOKEN": {
+            "description": "This gets generated",
+            "value": ""
+        },
+        "SECRET_KEY": {
+                "description": "Secret key to make a requests",
+                "value": ""
+        }
+      }
+  }
