@@ -7,7 +7,7 @@
 import smtplib
 import ssl
 from email.mime.text import MIMEText
-
+import logging
 import tweepy
 from discord_webhook import DiscordEmbed, DiscordWebhook
 from slack_webhook import Slack
@@ -20,6 +20,7 @@ def send_alert(data):
     if config.send_telegram_alerts:
         tg_bot = Bot(token=config.tg_token)
         try:
+            logging.info(f"Sending alert {data}")
             tg_bot.sendMessage(
                 data["telegram"],
                 data["msg"]

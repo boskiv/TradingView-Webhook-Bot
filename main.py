@@ -5,13 +5,14 @@
 # ----------------------------------------------- #
 
 import json
+import os
 import time
 
 from flask import Flask, request
-
+import logging
 import config
 from handler import *
-
+logging.basicConfig(level=logging.INFO)
 app = Flask(__name__)
 
 
@@ -36,11 +37,10 @@ def webhook():
                 return "Refused alert", 400
 
     except Exception as e:
-        print("[X]", get_timestamp(), "Error:\n>", e)
+        logging.error("[X]", get_timestamp(), "Error:\n>", e)
         return "Error", 400
 
 
 if __name__ == "__main__":
     from waitress import serve
-
-    serve(app, host="0.0.0.0", port=80)
+    serve(app, host='0.0.0.0', port=os.environ("PORT", 80))
