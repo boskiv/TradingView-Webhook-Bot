@@ -28,12 +28,12 @@ def webhook():
             data = request.get_json()
             key = data["key"]
             if key == config.sec_key:
-                print(get_timestamp(), "Alert Received & Sent!")
+                logging.info("Alert Received & Sent!")
                 send_alert(data)
                 return "Sent alert", 200
 
             else:
-                print("[X]", get_timestamp(), "Alert Received & Refused! (Wrong Key)")
+                logging.error('Alert Received & Refused! (Wrong Key)')
                 return "Refused alert", 400
 
     except Exception as e:
