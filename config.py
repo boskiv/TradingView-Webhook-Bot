@@ -11,12 +11,12 @@
 import os
 
 sec_key = (
-    os.environ.get("SECRET_KEY")  # Can be anything. Has to match with "key" in your TradingView alert message
+    os.getenv("SECRET_KEY")  # Can be anything. Has to match with "key" in your TradingView alert message
 )
 
 # Telegram Settings
 send_telegram_alerts = True
-tg_token = os.environ.get("TG_TOKEN")  # Bot token. Get it from @Botfather
+tg_token = os.getenv("TG_TOKEN")  # Bot token. Get it from @Botfather
 channel = 0  # Channel ID (ex. -1001487568087)
 
 # Discord Settings
