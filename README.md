@@ -27,6 +27,9 @@
 }
 ```
 
+В поле WebHook URL нужно указать domain из Heroku + /webhook (https://xxxxxxx.herokuapp.com/webhook)
+
+
 Доступные переменные которые можно использовать
 https://www.tradingview.com/support/solutions/43000531021-how-to-use-a-variable-value-in-alert/
 
